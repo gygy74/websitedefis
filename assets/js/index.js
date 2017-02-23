@@ -11,7 +11,7 @@ function RefreshAuto() {
 		dataType : 'html',
 		timeout: 4000,
 		success : function(code_html, statut){
-			if(code_html.slice(0,4) == "True") {
+			if(code_html== true) {
 				$("#LockPicking").addClass("done");
 				$("#Inv-LockPicking").prop('disabled', true);
 				$("#Valid-LockPicking").prop('disabled', true);
@@ -177,14 +177,14 @@ function Valider(defis) {
 			   	}
 				else {
 					var result1 = {
-						result: result
+						'result': result
 					}
 					$.ajax({
 					   	url : 'result-lockpicking.html',
-					   	type : 'POST',
-						data : {
-                            result: result
-                        },
+					   	type : 'get',
+						data : result1,
+                        dataType : 'html',
+						timeout: 4000,
 					   	success : function(code_html, statut){
 							if(code_html == "True") {
 								$("#LockPicking").addClass("done");
