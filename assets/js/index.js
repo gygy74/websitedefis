@@ -6,7 +6,7 @@
 
 function RefreshAuto() {
   var result1 = {
-    'iddefi' : 'LockPicking'
+    'iddefi' : '0'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -22,7 +22,7 @@ function RefreshAuto() {
   });
   
   result1 = {
-    'iddefi' : 'RFID'
+    'iddefi' : '1'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -38,7 +38,7 @@ function RefreshAuto() {
   });
   
   result1 = {
-    'iddefi' : 'BruteforceRC4'
+    'iddefi' : '2'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -54,7 +54,7 @@ function RefreshAuto() {
   });
   
   result1 = {
-    'iddefi' : 'SteganoAudio1'
+    'iddefi' : '3'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -70,7 +70,7 @@ function RefreshAuto() {
   });
   
   result1 = {
-    'iddefi' : 'SteganoAudio2'
+    'iddefi' : '4'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -86,7 +86,7 @@ function RefreshAuto() {
   });
   
   result1 = {
-    'iddefi' : 'SteganoImage'
+    'iddefi' : '5'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -102,7 +102,7 @@ function RefreshAuto() {
   });
   
   result1 = {
-    'iddefi' : 'FailleXSSCookies'
+    'iddefi' : '6'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -118,7 +118,7 @@ function RefreshAuto() {
   });
 
   result1 = {
-    'iddefi' : 'FailleSQL'
+    'iddefi' : '7'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -134,7 +134,7 @@ function RefreshAuto() {
   });
 
  result1 = {
-    'iddefi' : 'ReverseBase64'
+    'iddefi' : '8'
   }
   $.ajax({
     url : 'verify-challenge.html',
@@ -379,9 +379,63 @@ function Valider(defis) {
               //alert("LockPicking\n\nOk.");
           }
           else {
-            var result1 = {
-              'iddefi' : defis,
-              'result': result
+            switch (defis) {
+              case "LockPicking": 
+                var result1 = {
+                  'iddefi' : '0',
+                  'result': result
+                }
+                break;
+              case "RFID":
+                var result1 = {
+                  'iddefi' : '1',
+                  'result': result
+                }
+                break;
+              case "BruteforceRC4":
+                var result1 = {
+                  'iddefi' : '2',
+                  'result': result
+                }
+                break;
+              case "SteganoAudio1":
+                var result1 = {
+                  'iddefi' : '3',
+                  'result': result
+                }
+                break;
+              case "SteganoAudio2":
+                var result1 = {
+                  'iddefi' : '4',
+                  'result': result
+                }
+                break;
+              case "SteganoImage":
+                var result1 = {
+                  'iddefi' : '5',
+                  'result': result
+                }
+                break;
+              case "FailleXSSCookies":
+                var result1 = {
+                  'iddefi' : '6',
+                  'result': result
+                }
+                break;
+              case "FailleSQL":
+                var result1 = {
+                  'iddefi' : '7',
+                  'result': result
+                }
+                break;
+              case "ReverseBase64":
+                var result1 = {
+                  'iddefi' : '8',
+                  'result': result
+                }
+                break;
+              default:
+                alert("Erreur");
             }
             $.ajax({
               url : 'check-challenge.html',
